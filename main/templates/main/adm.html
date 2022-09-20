@@ -1,0 +1,20 @@
+{% extends 'main/base.html'%}
+{% block title %}
+Адмінпанель
+{% endblock %}
+{% block content %}
+<p></p>
+<h1>Додати товар до каталогу</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.title}}<br>
+    {{ form.description}}<br>
+    {{ form.price}}<br>
+    
+    <button type="submit" class="btn btn-success">Додати</button>
+    <span> {{error}}</span>
+</form>
+
+
+
+{% endblock %}

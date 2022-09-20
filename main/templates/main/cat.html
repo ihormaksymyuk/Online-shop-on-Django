@@ -1,0 +1,45 @@
+{% extends 'main/base.html'%}
+{% block title %}
+Контакти
+{% endblock %}
+{% block content %}
+<h1>Каталог товарів</h1>
+{% if catalog %}
+    <style>
+        table, th, td {
+        border:2px solid black;
+        }
+        </style>
+        <body>
+        <table style="width:100%">
+        <table>
+            <tr>
+                <th>номер п/п</th>
+                <th>Назва товару</th>
+                <th>Короткий опис</th>
+                <th>Ціна</th>
+            </tr>
+    {% for el in catalog %}
+
+        <h2>
+            <tr>
+                <td>{{el.id}}</td>
+                <td>{{el.title}}</td>
+                <td>{{el.description}}</td>
+                <td>{{el.price}}</td>
+                <td><button href="{{product_detail}}" class="btn btn-success">докладніше</button></td> 
+                
+            </tr>
+            
+        </h2> 
+        
+        {% endfor %}
+    </table>
+    
+{% else %}
+    <h3>В каталозі ще немає жодного товару</h3>
+    {% endif %} 
+</body>
+
+
+{% endblock %}
